@@ -12,17 +12,14 @@
     quick-release;
 };
 
-&lt { flavor = "balanced"; };
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+};
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        Layer_3 {
-            bindings = <&mo 0>;
-            key-positions = <36 41>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         hml: hml {
@@ -52,6 +49,33 @@
             hold-trigger-key-positions = <36 37 38 39 40 41 36 37 38 36 37 38 9 10 21 22 33 34 6 7 8 18 19 20 30 31 32 36 37 38>;
             hold-trigger-on-release;
         };
+
+        dot_morph: dot_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_MORPH";
+            bindings = <&kp KP_DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_morph: comma_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_MORPH";
+            bindings = <&kp KP_COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        qexcl: qexcl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QEXCL";
+            bindings = <&kp QUESTION>, <&kp EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -66,10 +90,28 @@
 
             display-name = "Base";
             bindings = <
-&none  &kp Q  &kp W  &kp F  &kp P  &kp B        &kp J    &kp L          &kp U      &kp Y    &kp SEMICOLON  &none
-&none  &kp A  &kp R  &kp S  &kp T  &kp G        &kp M    &kp N          &kp E      &kp I    &kp O          &none
-&none  &kp Z  &kp X  &kp C  &kp D  &kp V        &kp K    &kp H          &kp COMMA  &kp DOT  &kp SLASH      &none
-                     &mo 0  &none  &kp SPACE    &kp RET  &kp BACKSPACE  &mo 0
+&none  &kp Q            &kp W            &kp F         &kp P              &kp B             &kp J    &kp L               &kp U                 &kp Y        &kp SEMICOLON  &none
+&none  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G             &kp M    &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RALT I  &hmr RWIN O    &none
+&none  &kp Z            &kp X            &kp C         &kp D              &kp V             &kp K    &kp H               &comma_morph          &dot_morph   &qexcl         &none
+                                         &none         &lt 1 SPACE        &sk LEFT_SHIFT    &kp RET  &lt 2 BACKSPACE     &none
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
