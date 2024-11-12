@@ -24,7 +24,42 @@
 
         at {
             bindings = <&kp AT>;
-            key-positions = <1 13>;
+            key-positions = <2 14>;
+        };
+
+        pound {
+            bindings = <&kp POUND>;
+            key-positions = <3 15>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <16 4>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 17>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <6 18>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <7 19>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTRK>;
+            key-positions = <8 20>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <9 21>;
         };
     };
 
