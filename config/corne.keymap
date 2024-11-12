@@ -61,6 +61,46 @@
             bindings = <&kp AMPERSAND>;
             key-positions = <9 21>;
         };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <14 26>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <15 27>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <16 28>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <17 29>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <18 30>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <19 31>;
+        };
+
+        slash {
+            bindings = <&kp FSLH>;
+            key-positions = <20 32>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <21 33>;
+        };
     };
 
     behaviors {
