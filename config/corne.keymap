@@ -119,7 +119,7 @@
 
         cut {
             bindings = <&kp LC(X)>;
-            key-positions = <26 27 28>;
+            key-positions = <26 28>;
         };
 
         lbrk {
@@ -194,7 +194,7 @@
         comma_morph: comma_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_MORPH";
-            bindings = <&kp KP_COMMA>, <&kp SEMI>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
